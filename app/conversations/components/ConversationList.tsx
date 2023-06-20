@@ -11,6 +11,7 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import ConversationBox from "./ConversationBox";
+import GroupChatModal from "../../components/modals/GroupChatModal";
 
 
 interface ConversationListProps {
@@ -21,8 +22,7 @@ interface ConversationListProps {
 
 const ConversationList: React.FC<ConversationListProps> = ({
     initialItems,
-    users,
-    title
+    users
 }) => {
     const [items, setItems] = useState(initialItems);
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -34,6 +34,11 @@ const ConversationList: React.FC<ConversationListProps> = ({
 
     return (
         <>
+            <GroupChatModal
+                users={users}
+                isOpen={isModalOpen}
+                onClose={() => setIsModalOpen(false)}   
+            />
             <aside className={clsx(`
                 fixed 
                 inset-y-0 
@@ -63,7 +68,7 @@ const ConversationList: React.FC<ConversationListProps> = ({
                             Messages
                         </div>
                         <div 
-                            onClick={()=>{}}
+                            onClick={()=>setIsModalOpen(true)}
                             className="
                                 rounded-full 
                                 p-2 
