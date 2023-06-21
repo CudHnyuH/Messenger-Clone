@@ -82,6 +82,7 @@ const AuthForm = () => {
 
         if (callback?.ok) {
           router.push('/conversations')
+          toast.success('Success!')
         }
       })
       .finally(() => setIsLoading(false))
