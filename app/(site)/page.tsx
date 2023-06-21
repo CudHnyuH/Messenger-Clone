@@ -15,7 +15,11 @@ const Auth = () => {
         bg-gray-100
       "
     >
-      <div className="sm:mx-auto sm:w-full sm:max-w-md">
+      <div className="
+        sm:mx-auto 
+        sm:w-full 
+        sm:max-w-md"
+      >
         <Image
           height="48"
           width="48"
@@ -32,11 +36,11 @@ const Auth = () => {
             tracking-tight 
             text-gray-900
           "
-        >
-            Sign in to your account
+          >
+            Sign in to your account.
         </h2>
-      </div> 
-      <AuthForm />
+      </div>
+      <AuthForm />      
   </div>
   )
 }

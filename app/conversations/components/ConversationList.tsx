@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { User } from "@prisma/client";
 import { useRouter } from "next/navigation";
@@ -6,7 +6,7 @@ import { useSession } from "next-auth/react";
 import { useEffect, useMemo, useState } from "react";
 import { MdOutlineGroupAdd } from 'react-icons/md';
 import clsx from "clsx";
-import { find } from 'lodash';
+import { find, uniq } from 'lodash';
 
 import useConversation from "@/app/hooks/useConversation";
 import { pusherClient } from "@/app/libs/pusher";

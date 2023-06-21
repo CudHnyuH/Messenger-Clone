@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { HiChevronLeft } from 'react-icons/hi'
 import { HiEllipsisHorizontal } from 'react-icons/hi2';
@@ -19,12 +19,15 @@ interface HeaderProps {
   }
 }
 
-const Header: React.FC<HeaderProps> = ({ conversation }) => {
+const Header: React.FC<HeaderProps> = ({ 
+  conversation 
+}) => {
   const otherUser = useOtherUser(conversation);
   const [drawerOpen, setDrawerOpen] = useState(false);
 
   const { members } = useActiveList();
   const isActive = members.indexOf(otherUser?.email!) !== -1;
+
   const statusText = useMemo(() => {
     if (conversation.isGroup) {
       return `${conversation.users.length} members`;
@@ -75,8 +78,14 @@ const Header: React.FC<HeaderProps> = ({ conversation }) => {
           <Avatar user={otherUser} />
         )}
         <div className="flex flex-col">
-          <div>{conversation.name || otherUser.name}</div>
-          <div className="text-sm font-light text-neutral-500">
+          <div>
+            {conversation.name || otherUser.name}
+          </div>
+          <div className="
+            text-sm 
+            font-light 
+            text-neutral-500"
+          >
             {statusText}
           </div>
         </div>
